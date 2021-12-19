@@ -1,9 +1,11 @@
 <!--路由组件-->
 <template>
-  <div>
-    <loginForm></loginForm>
-    <br>
-    <router-link to="/MySignup">点我注册</router-link>
+  <div class="indexPage">
+    <div class="loginForm">
+      <loginForm></loginForm>
+      <br>
+      <span style="font-size: 2px">Dont have a account?<router-link to="/MySignup" style="color: blue;cursor:pointer;text-decoration:none">SignUp!</router-link></span>
+    </div>
   </div>
 </template>
 <script>
@@ -17,5 +19,21 @@ import loginForm from "../components/loginForm";
   }
 </script>
 <style>
-
+.indexPage{
+  background-color: skyblue;
+  height: 100%;
+  weight:99%;
+}
+.loginForm{
+  color:black;
+  text-align: center;
+  width: 27%;
+  height: 35%;
+  position: absolute;
+  margin-left: 36%;
+  margin-top: 12%;
+  border-radius: 10px;
+  background-color: white;
+  border:outset;
+}
 </style>

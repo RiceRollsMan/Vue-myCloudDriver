@@ -31,6 +31,14 @@ const userOptions = {
     /*记录用户捐助信息*/
     logDonate(context,donate){
       context.commit('LOGDONATE',donate)
+    },
+    /*保存密码*/
+    remPassword(context,remPassword){
+      context.commit('REMPASSWORD',remPassword)
+    },
+    /*更改记住密码状态位*/
+    changeRemPasswordState(context,remPasswordState){
+      context.commit('CHANGEREMPASSWORDSTATE',remPasswordState)
     }
   },
   /*
@@ -116,6 +124,12 @@ const userOptions = {
       }
       /*开始添加记录*/
       state.users[i].userDonateLog.push(newDonateLog)
+    },
+    REMPASSWORD(state,remPassword){
+      state.remPassword=remPassword
+    },
+    CHANGEREMPASSWORDSTATE(state,remPasswordState){
+      state.remPasswordState=remPasswordState
     }
   },
   /*state:"状态"
@@ -124,6 +138,12 @@ const userOptions = {
     /*
     * 用于返回登录时，输入是否正确,默认为错误*/
     loginCorrect:"false",
+    /*用于存放当前已经登录的用户的用户名*/
+    loginUser:"",//username
+    /*是否记住密码,默认为无*/
+    remPassword:"",
+    /*是否保存密码状态*/
+    remPasswordState:false,
     /*存放用户数据
     * 由于有多个用户，所以user理应为一个数组*/
     users:[{
@@ -143,8 +163,7 @@ const userOptions = {
       }],
       isAdmin:"1",/*用户是否为管理员。1：管理员，0：普通用户 默认为0，即普通用户*/
     }],
-    /*用于存放当前已经登录的用户的用户名*/
-    loginUser:""//username
+
   },
   /*
   * */
@@ -169,6 +188,17 @@ const userOptions = {
         if(username==userArr[i].username){
           return userArr[i].userDonateLog
         }
+      }
+    },
+    getUsernameExist(state){
+      return function(username){
+        let userArr=state.users
+        for(let i=0;i<userArr.length;i++){
+          if(username==userArr[i].username){
+            return false
+          }
+        }
+        return true
       }
     }
   }
