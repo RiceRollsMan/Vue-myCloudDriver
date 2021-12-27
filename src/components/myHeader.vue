@@ -2,7 +2,7 @@
   <div :class="headStyle">
     <router-link to="/myMain"><img src="../../public/logo.png" alt="" :class="logoStyle"></router-link>
     <myHeaderUser></myHeaderUser>
-    <router-link to="/">退出登录</router-link>
+    <router-link to="/" style="float:right;">退出登录</router-link>
   </div>
 </template>
 

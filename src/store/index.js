@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import dayjs from '../../js/day'
 Vue.use(Vuex)
 /*关于user的选项*/
 const userOptions = {
@@ -157,7 +157,7 @@ const userOptions = {
         donateNumber:1,
         donateAnimalId: 1,
         donateAnimalName: "星星",
-        donateDate: Date.now(),
+        donateDate: new Date(),
         donateMoney: 100,
         donateHopeToUse: "吃东西"
       }],
@@ -431,7 +431,7 @@ namespaced为true，为组件使用建立前提*/
           return animalArr[i].animalDonateRecord
         }
       }
-    }
+    },
   }
 }
 

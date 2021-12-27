@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <span>
 
     <span style="color: white">{{username}}</span>
     <img :src="userHeads" alt="" style="border-radius:35px;height: 35px;width: 35px;margin-right: 15px;">
-  </div>
+  </span>
 </template>
 
 <script>

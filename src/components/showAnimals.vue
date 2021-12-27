@@ -6,6 +6,7 @@
            名字:<span>{{animals.animalName}}</span><br>
            性别:<span>{{animals.animalGender}}</span><br>
            id:<span>{{animals.animalId}}</span><br>
+            <img :src="animals.animalHeads" alt="xx">
            <button @click.stop="toFocusAnimals(animals.animalId)" v-if="animals.isFocus==0">关注</button>
            <button @click.stop="toDontFocusAnimals(animals.animalId)" v-if="animals.isFocus">已关注</button>
       </div>

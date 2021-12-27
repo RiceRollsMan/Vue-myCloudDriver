@@ -1,8 +1,8 @@
 <!--路由组件-->
 <template>
   <form @submit.prevent="formLogin">
-    <input :class="usernameStyle" type="text" v-model="username" placeholder="请输入用户名" required="required"><br>
-    <input :class="passwordStyle" type="password" v-model="password" placeholder="请输入密码" required="required"><br>
+    <input :class="usernameStyle" type="text" v-model="username" placeholder="请输入用户名" required="required" ><br>
+    <input :class="passwordStyle" type="password" v-model="password" placeholder="请输入密码" required="required" ><br>
     <label for="remPassword"><input :class="remPasswordStyle" id="remPassword" type="checkbox" :checked="remOrNotRemPassword"  @click="toRemPassword()">记住密码</label> <br>
     <button type="submit" :class="loginStyle">登录</button>
   </form>
@@ -17,7 +17,9 @@ export default {
     return{
       /*获取到初始的账号密码，看看是否是从那边退出的*/
       username:"",
+      // username:"RiceRollsMan",
       password:"",
+      // password:"fkyourdogss22",
       remOrNotRemPassword:false,
       /*输入框*/
       usernameStyle:"inputUsername",

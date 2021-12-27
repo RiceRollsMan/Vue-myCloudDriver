@@ -6,24 +6,10 @@
   <h1>this is main</h1>
   <h1>this is main</h1>
   <addAnimal></addAnimal>
-  <h1>this is main</h1>
-  <h1>this is main</h1>
-  <h1>this is main</h1>
+  <router-link to="/myAdmin" style="float:right;">进入管理员</router-link>
   <myFuzzyQueryAnimals></myFuzzyQueryAnimals>
   <showAnimals></showAnimals>
-  <h1>this is main</h1>
-  <h1>this is main</h1>
-  <h1>this is main</h1>
-  <h1>this is main</h1>
-  <h1>this is main</h1>
-  <h1>this is main</h1>
-  <h1>this is main</h1>
-  <h1>this is main</h1>
-  <h1>this is main</h1>
-  <h1>this is main</h1>
-  <h1>this is main</h1>
-  <h1>this is main</h1>
-  <h1>this is main</h1>
+
 </div>
 </template>
 

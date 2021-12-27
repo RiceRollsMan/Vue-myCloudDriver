@@ -1,7 +1,8 @@
 <template>
-<div>
-  <input type="text" placeholder="可以通过名字或者动物ID查询动物" v-model="keywords"><br>
-  <button @click="fuzzyQueryAnimals">点我模糊查询动物</button>
+<div style="border: 2px gold solid">
+  <input type="text" style="margin-left:10%;height: 40px;width: 450px;border-radius: 10px;border: 2px solid black;font-size: 20px;text-align: center" placeholder="可以通过名字或者动物ID查询动物" v-model="keywords" @keyup.enter="fuzzyQueryAnimals"><br>
+<!--  测试时使用的-->
+<!--  <button @click="fuzzyQueryAnimals">点我模糊查询动物</button>-->
 </div>
 </template>
 <script>

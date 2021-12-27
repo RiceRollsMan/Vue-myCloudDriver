@@ -1,5 +1,5 @@
 <template>
-  <div style="border: 1px">
+  <div style="border: 1px solid black">
     <img src="https://qlogo1.store.qq.com/qzone/2770604832/2770604832/100" alt="animal" v-model="animalHeads">
     动物名字：<input type="text" v-model="animalName"> <br>
     动物性别：
