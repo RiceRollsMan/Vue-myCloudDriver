@@ -8,8 +8,7 @@ import myDonatePage from "../views/myDonatePage";
 import myAdmin from "../views/myAdmin";
 import contribute from "../components/contribute";
 import myPersonalCenter from "../views/myPersonalCenter";
-import myFocusAnimals from "../components/myFocusAnimals";
-import myDonationHistory from "../components/myDonationHistory";
+import animalsDescription from "../components/animalsDescription";
 
 Vue.use(VueRouter)
 
@@ -48,25 +47,19 @@ const routes = [
         path:"/contribute",
         name:"contribute",
         component:contribute
-      }
+      },
+      {
+        path:"/animalsDescription",
+        name:"animalsDescription",
+        component:animalsDescription
+      },
+
     ]
   },
   {
     path:"/myPersonalCenter",
     name:"myPersonalCenter",
     component: myPersonalCenter,
-    children: [
-      {
-        path:"/myFocusAnimals",
-        name:"myFocusAnimals",
-        component: myFocusAnimals
-      },
-      {
-        path:"/myDonationHistory",
-        name:"myDonationHistory",
-        component: myDonationHistory
-      }
-    ]
   }
 ]
 

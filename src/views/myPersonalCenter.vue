@@ -1,6 +1,10 @@
 <template>
   <div>
-    <myPersonalCenterTop></myPersonalCenterTop>
+    <myHeader></myHeader>
+    <div>xx</div>
+    <div>xx</div>
+    <div>xx</div>
+    <div>xx</div>
 
     <myPersonalCenterBody></myPersonalCenterBody>
   </div>
@@ -9,12 +13,14 @@
 <script>
 import myPersonalCenterTop from "../components/myPersonalCenterTop";
 import myPersonalCenterBody from "../components/myPersonalCenterBody";
+import myHeader from "../components/myHeader";
 
 export default {
   name: "myPersonalCenter",
   components:{
     myPersonalCenterTop,
-    myPersonalCenterBody
+    myPersonalCenterBody,
+    myHeader
   }
 }
 </script>

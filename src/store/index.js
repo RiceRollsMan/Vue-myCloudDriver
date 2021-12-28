@@ -119,7 +119,7 @@ const userOptions = {
         donateNumber:donateNumber,
         donateAnimalId: donate.donateAnimalId,
         donateAnimalName: donate.donateAnimalName,
-        donateDate: donate.donateDate,
+        donateDate: dayjs(donate.donateDate).format('YYYY-MM-DD'),
         donateMoney: donate.donateMoney,
         donateHopeToUse: donate.donateHopeToUse
       }
@@ -158,7 +158,7 @@ const userOptions = {
         donateNumber:1,
         donateAnimalId: 1,
         donateAnimalName: "星星",
-        donateDate: new Date(),
+        donateDate: dayjs().format('YYYY-MM-DD'),
         donateMoney: 100,
         donateHopeToUse: "吃东西"
       }],
@@ -305,7 +305,7 @@ namespaced为true，为组件使用建立前提*/
        let newDonate={
          donateNumber:getDonateNumber,
          donateUsername: donate.donateUsername,
-         donateDate:new Date(),
+         donateDate:dayjs(new Date()).format('YYYY-MM-DD'),
          donateMoney: donate.donateMoney,
          donateHopeToUse: donate.donateHopeToUse
        }
@@ -362,7 +362,7 @@ namespaced为true，为组件使用建立前提*/
         {
           donateNumber:1,
           donateUsername:"RiceRollsMan",
-          donateDate:new Date(),
+          donateDate:dayjs(new Date()).format('YYYY-MM-DD'),
           donateMoney:100,
           donateHopeToUse:"买吃的"
         },

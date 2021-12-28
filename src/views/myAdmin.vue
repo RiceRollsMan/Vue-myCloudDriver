@@ -8,7 +8,7 @@
             <el-menu-item-group>
               <el-menu-item index="1-1">
                 <!--插入的地方-->
-                <router-link to="/animal/describe">描述信息</router-link>
+                <router-link to="/animalsDescription">描述信息</router-link>
               </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
