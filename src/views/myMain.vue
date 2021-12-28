@@ -3,12 +3,12 @@
 <div class="hh">
   <my-header></my-header>
   <h1>this is main</h1>
-  <h1>this is main</h1>
-  <h1>this is main</h1>
-  <addAnimal></addAnimal>
+  <myFuzzyQueryAnimals ></myFuzzyQueryAnimals>
+  <hr>
+  <addAnimal style="display: inline-block"></addAnimal>
   <router-link to="/myAdmin" style="float:right;">进入管理员</router-link>
-  <myFuzzyQueryAnimals></myFuzzyQueryAnimals>
-  <showAnimals></showAnimals>
+  <router-link to="/myPersonalCenter">进入个人中心</router-link>
+  <showAnimals style="display: inline-block"></showAnimals>
 
 </div>
 </template>

@@ -7,6 +7,9 @@ import myAnimalDetails from "../views/myAnimalDetails";
 import myDonatePage from "../views/myDonatePage";
 import myAdmin from "../views/myAdmin";
 import contribute from "../components/contribute";
+import myPersonalCenter from "../views/myPersonalCenter";
+import myFocusAnimals from "../components/myFocusAnimals";
+import myDonationHistory from "../components/myDonationHistory";
 
 Vue.use(VueRouter)
 
@@ -48,8 +51,23 @@ const routes = [
       }
     ]
   },
-
-
+  {
+    path:"/myPersonalCenter",
+    name:"myPersonalCenter",
+    component: myPersonalCenter,
+    children: [
+      {
+        path:"/myFocusAnimals",
+        name:"myFocusAnimals",
+        component: myFocusAnimals
+      },
+      {
+        path:"/myDonationHistory",
+        name:"myDonationHistory",
+        component: myDonationHistory
+      }
+    ]
+  }
 ]
 
 const router = new VueRouter({

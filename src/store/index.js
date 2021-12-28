@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import dayjs from '../../js/day'
 Vue.use(Vuex)
+Vue.use(dayjs)
 /*关于user的选项*/
 const userOptions = {
   /*
@@ -304,7 +305,7 @@ namespaced为true，为组件使用建立前提*/
        let newDonate={
          donateNumber:getDonateNumber,
          donateUsername: donate.donateUsername,
-         donateDate: Date.now(),
+         donateDate:new Date(),
          donateMoney: donate.donateMoney,
          donateHopeToUse: donate.donateHopeToUse
        }
@@ -361,7 +362,7 @@ namespaced为true，为组件使用建立前提*/
         {
           donateNumber:1,
           donateUsername:"RiceRollsMan",
-          donateDate:Date.now(),
+          donateDate:new Date(),
           donateMoney:100,
           donateHopeToUse:"买吃的"
         },
@@ -432,6 +433,16 @@ namespaced为true，为组件使用建立前提*/
         }
       }
     },
+    getMyFocusAnimals(state){
+      let animals=state.animals
+      let myFocusAnimals=[]
+      for(let i=0;i<animals.length;i++){
+        if(animals[i].isFocus==1){
+          myFocusAnimals.push(animals[i])
+        }
+      }
+      return myFocusAnimals
+    }
   }
 }
 

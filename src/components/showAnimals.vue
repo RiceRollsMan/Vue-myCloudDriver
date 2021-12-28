@@ -1,12 +1,12 @@
 <template>
 <div>
-  <div v-for="animals in fuzzyAnimalsByKeywords" key="{{animals.animalId}}" :class="animalCard">
+  <div v-for="animals in fuzzyAnimalsByKeywords" key="{{animals.animalId}}" :class="animalCard" style="width: 300px;height: 300px;display: inline-block">
 <!--    <router-link to="/myAnimalDetails">-->
       <div @click="toPassAnimalId(animals.animalId)">
            名字:<span>{{animals.animalName}}</span><br>
            性别:<span>{{animals.animalGender}}</span><br>
            id:<span>{{animals.animalId}}</span><br>
-            <img :src="animals.animalHeads" alt="xx">
+            <img :src="animals.animalHeads" alt="xx" style="height: 80px;width: 60px">
            <button @click.stop="toFocusAnimals(animals.animalId)" v-if="animals.isFocus==0">关注</button>
            <button @click.stop="toDontFocusAnimals(animals.animalId)" v-if="animals.isFocus">已关注</button>
       </div>

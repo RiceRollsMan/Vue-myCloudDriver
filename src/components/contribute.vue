@@ -45,53 +45,6 @@ export default {
       animals:'animals'
     })
   },
-  data() {
-    return {
-      Data:[{
-        Date: [
-            '2021-10-08',
-            '2021-10-24'
-        ],
-        UserName: [
-            '赵睿',
-            '郭艾伦'
-        ],
-        ContributionAmount: [
-            '500元',
-            '500元'
-        ]
-      },
-        {
-          Date: [
-            '2021-12-21',
-            '2021-11-11'
-          ],
-          UserName: [
-            '张三',
-            '李四'
-          ],
-          ContributionAmount: [
-            '1000元',
-            '1000元'
-          ]
-        },
-        {
-          Date: [
-            '2021-12-21',
-            '2021-11-11'
-          ],
-          UserName: [
-            '李华',
-            '小芳'
-          ],
-          ContributionAmount: [
-            '1000元',
-            '1500元'
-          ]
-        }
-      ]
-    }
-  },
   methods:{
     getAnimalDonations(animalId){
       let i=0;
