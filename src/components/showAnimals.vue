@@ -36,7 +36,8 @@ export default {
     /*把id传到后台，用于详细页使用*/
     toPassAnimalId(animalId){
       this.passAnimalId(animalId)
-      this.$router.push("/myAnimalDetails")
+      // this.$router.push("/myAnimalDetails")
+      this.$router.push("/myAnimalDetailsOfChao")
     },
     ...mapActions('animalAbout',{passAnimalId:'getAnimalId'}),
     /*把id传到后台，并且用于关注或者取消关注*/

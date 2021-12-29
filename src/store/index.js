@@ -284,6 +284,7 @@ namespaced为true，为组件使用建立前提*/
     POSTCOMMENT(state,comment){
       /*首先先获取到详细页里的动物ID*/
       let animalDetailsId=state.animalDetailsId
+      comment.commentDate=dayjs(comment.commentDate).format('YYYY-MM-DD')
       for(let i=0;i<state.animals.length;i++){
         if(animalDetailsId==state.animals[i].animalId){
           state.animals[i].comments.push(comment)
@@ -342,19 +343,19 @@ namespaced为true，为组件使用建立前提*/
         {
           commentUser:"RiceRollsMan",/*评论人*/
           commentUserHeads:"",/*评论人头像*/
-          commentDate:Date.now(),/*评论日期*/
+          commentDate:dayjs(Date.now()).format('YYYY-MM-DD'),/*评论日期*/
           commentContext:"星星真可爱！",/*评论内容*/
         },
         {
           commentUser:"RiceRollsMaster",/*评论人*/
           commentUserHeads:"",/*评论人头像*/
-          commentDate:Date.now(),/*评论日期*/
+          commentDate:dayjs(Date.now()).format('YYYY-MM-DD'),/*评论日期*/
           commentContext:"星星真可爱啊！！",/*评论内容*/
         },
         {
           commentUser:"RiceRolls",/*评论人*/
           commentUserHeads:"",/*评论人头像*/
-          commentDate:Date.now(),/*评论日期*/
+          commentDate:dayjs(Date.now()).format('YYYY-MM-DD'),/*评论日期*/
           commentContext:"星星真可爱啊啊！！！",/*评论内容*/
         },
       ],/*该动物的评论详情，理应为数组*/
@@ -415,10 +416,12 @@ namespaced为true，为组件使用建立前提*/
       for(let i = 0;i<animalArr.length;i++){
         if(state.animalDetailsId==animalArr[i].animalId){
           return {
+            animalId:animalArr[i].animalId,
             animalName:animalArr[i].animalName,
             animalHeads:animalArr[i].animalHeads,
             isFocus:animalArr[i].isFocus,
-            animalIntroduction:animalArr[i].animalIntroduction
+            animalIntroduction:animalArr[i].animalIntroduction,
+            animalImages:animalArr[i].animalImages
           }
         }
       }

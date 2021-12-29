@@ -8,6 +8,7 @@
   <addAnimal style="display: inline-block"></addAnimal>
   <router-link to="/myAdmin" style="float:right;">进入管理员</router-link>
   <router-link to="/myPersonalCenter">进入个人中心</router-link>
+  <router-link to="/myAnimalDetailsOfChaos">进入潮的界面</router-link>
   <showAnimals style="display: inline-block"></showAnimals>
 
 </div>
