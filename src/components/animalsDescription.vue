@@ -10,6 +10,7 @@
       <template scope="scope">
         <span v-if="scope.row.animalGender==1">雄性</span>
         <span v-if="scope.row.animalGender==0">雌性</span>
+        <span v-if="scope.row.animalGender==2">不详</span>
       </template>
     </el-table-column>
   </el-table>

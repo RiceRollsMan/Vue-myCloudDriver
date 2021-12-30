@@ -19,10 +19,9 @@
     <span></span>
 <!--    动物详情介绍-->
     <div style="background: #eeeeee; padding: 50px;margin: 50px">
-      <h1>简介:</h1>
-      <div>
+      <p>
         {{animalInfo.animalIntroduction}}
-      </div>
+      </p>
     </div>
 
     <!--    图片展示-->
@@ -36,8 +35,6 @@
       </el-carousel>
     </div>
 <!--    分隔符-->
-    <div style="height: 80px;background: #e2e2e2;margin-bottom:30px;margin-top: 30px">
-    </div>
 
   </div>
 </div>
@@ -68,7 +65,7 @@ export default {
       dontFocusAnimals:'dontFocusAnimals'
     }),
     toDonatePage(){
-      this.$router.push("/myDonatePage")
+      this.$router.push("/myDonatePageOfZhong")
     }
   }
 }

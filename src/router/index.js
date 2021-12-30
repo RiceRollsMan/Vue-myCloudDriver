@@ -10,6 +10,7 @@ import contribute from "../components/contribute";
 import myPersonalCenter from "../views/myPersonalCenter";
 import animalsDescription from "../components/animalsDescription";
 import myAnimalDetailsOfChao from "../views/myAnimalDetailsOfChao";
+import myDonatePageOfZhong from "../views/myDonatePageOfZhong";
 
 Vue.use(VueRouter)
 
@@ -66,6 +67,11 @@ const routes = [
     path:"/myAnimalDetailsOfChao",
     name:"myAnimalDetailsOfChao",
     component: myAnimalDetailsOfChao,
+  },
+  {
+    path:"/myDonatePageOfZhong",
+    name:"myDonatePageOfZhong",
+    component: myDonatePageOfZhong,
   }
 ]
 

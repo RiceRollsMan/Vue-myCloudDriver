@@ -1,8 +1,11 @@
 <template>
   <div>
+    <my-header></my-header>
+    <div>xx</div>
+    <div>xx</div>
     <el-container>
       <el-aside width="200px">
-        <el-menu :default-openeds="['1']">
+        <el-menu>
           <el-submenu index="1">
             <template slot="title"><i class="el-icon-caret-right"></i>动物信息</template>
             <el-menu-item-group>
@@ -38,15 +41,23 @@
 
 <script>
 import contribute from "../components/contribute";
+import myHeader from "../components/myHeader";
 
 export default {
   name: "myAdmin",
   components:{
-    contribute:contribute
+    contribute:contribute,
+    myHeader
   }
 }
 </script>
 
 <style scoped>
-
+.el-header {
+  background-color: #B3C0D1;
+  color: #333;
+}
+.el-aside {
+  color: #333;
+}
 </style>

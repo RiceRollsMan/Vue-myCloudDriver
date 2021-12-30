@@ -2,15 +2,12 @@
 <template>
 <div class="hh">
   <my-header></my-header>
-  <h1>this is main</h1>
+  <div>this is main</div>
+  <div>this is main</div>
+  <div>&nbsp;</div>
   <myFuzzyQueryAnimals ></myFuzzyQueryAnimals>
   <hr>
-  <addAnimal style="display: inline-block"></addAnimal>
-  <router-link to="/myAdmin" style="float:right;">进入管理员</router-link>
-  <router-link to="/myPersonalCenter">进入个人中心</router-link>
-  <router-link to="/myAnimalDetailsOfChaos">进入潮的界面</router-link>
   <showAnimals style="display: inline-block"></showAnimals>
-
 </div>
 </template>
 
@@ -31,7 +28,4 @@ export default {
 </script>
 
 <style scoped>
-.hh{
-margin: 0px;
-}
 </style>

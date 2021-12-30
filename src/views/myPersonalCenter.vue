@@ -3,8 +3,7 @@
     <myHeader></myHeader>
     <div>xx</div>
     <div>xx</div>
-    <div>xx</div>
-    <div>xx</div>
+
 
     <myPersonalCenterBody></myPersonalCenterBody>
   </div>
