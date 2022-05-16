@@ -1,77 +1,45 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import myMain from "../views/myMain";
-import myIndex from "../views/myIndex";
-import mySignup from "../views/mySignup";
-import myAnimalDetails from "../views/myAnimalDetails";
-import myDonatePage from "../views/myDonatePage";
-import myAdmin from "../views/myAdmin";
-import contribute from "../components/contribute";
-import myPersonalCenter from "../views/myPersonalCenter";
-import animalsDescription from "../components/animalsDescription";
-import myAnimalDetailsOfChao from "../views/myAnimalDetailsOfChao";
-import myDonatePageOfZhong from "../views/myDonatePageOfZhong";
+import test1 from "../views/test1";
+import test2 from "../views/test2";
+import showFiles from "../views/showFiles";
+import upLoadFile from "../views/upLoadFile";
+import showFiles2 from "../views/showFiles2";
+import showFiles3 from "../views/showFiles3";
+
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path:"/",
-    name:"myIndex",
-    component: myIndex,
+    name:"test1",
+    component: test1,
   },
   {
-    path:"/myMain",
-    name:"MyMain",
-    component: myMain
+    path:"/test2",
+    name:"test2",
+    component: test2,
   },
   {
-    path:"/mySignup",
-    name:"MySignup",
-    component: mySignup
+    path:"/showFiles",
+    name:"showFiles",
+    component: showFiles,
   },
   {
-    path:"/myAnimalDetails",
-    name:"myAnimalDetails",
-    component: myAnimalDetails
+    path:"/upLoadFile",
+    name:"upLoadFile",
+    component: upLoadFile,
   },
   {
-    path:"/myDonatePage",
-    name:"myDonatePage",
-    component: myDonatePage
+    path:"/showFiles2",
+    name:"showFiles2",
+    component: showFiles2,
   },
   {
-    path:"/myAdmin",
-    name:"myAdmin",
-    component: myAdmin,
-    children:[
-      {
-        path:"/contribute",
-        name:"contribute",
-        component:contribute
-      },
-      {
-        path:"/animalsDescription",
-        name:"animalsDescription",
-        component:animalsDescription
-      },
-
-    ]
-  },
-  {
-    path:"/myPersonalCenter",
-    name:"myPersonalCenter",
-    component: myPersonalCenter,
-  },
-  {
-    path:"/myAnimalDetailsOfChao",
-    name:"myAnimalDetailsOfChao",
-    component: myAnimalDetailsOfChao,
-  },
-  {
-    path:"/myDonatePageOfZhong",
-    name:"myDonatePageOfZhong",
-    component: myDonatePageOfZhong,
+    path:"/showFiles3",
+    name:"showFiles3",
+    component: showFiles3,
   }
 ]
 
