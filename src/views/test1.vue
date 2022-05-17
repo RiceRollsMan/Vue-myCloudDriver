@@ -5,6 +5,7 @@
   <button @click="goShowFiles2()">goShowFiles2</button>
   <button @click="goShowFiles3()">goShowFiles3</button>
   <button @click="goUpLoadFile()">goUpLoadFile</button>
+  <button @click="goBin()">goBin</button>
   <div style="margin:5px; float:left">
     <input v-model="key" placeholder="请输入关键字" name="test" clearable style="width: 200px"/>
     <button type="primary"  style="margin-left:6px; float:right" @click="send()" >发送</button>
@@ -38,6 +39,9 @@ export default {
     },
     goUpLoadFile(){
       this.$router.push("/upLoadFile")
+    },
+    goBin(){
+      this.$router.push("/Bin")
     },
     send(){
       axios.get('http://localhost:8082/vueTest',{

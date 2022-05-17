@@ -1,5 +1,7 @@
 <template>
-
+<div>
+  bin
+</div>
 </template>
 
 <script>

@@ -6,6 +6,7 @@ import showFiles from "../views/showFiles";
 import upLoadFile from "../views/upLoadFile";
 import showFiles2 from "../views/showFiles2";
 import showFiles3 from "../views/showFiles3";
+import bin from "../views/bin";
 
 
 Vue.use(VueRouter)
@@ -40,6 +41,11 @@ const routes = [
     path:"/showFiles3",
     name:"showFiles3",
     component: showFiles3,
+  },
+  {
+    path:"/bin",
+    name:"bin",
+    component: bin,
   }
 ]
 

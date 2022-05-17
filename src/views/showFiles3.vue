@@ -8,6 +8,11 @@
     <p></p>
     <button @click="toMakeAFolder()">创建一个文件夹</button>
     <input type="text" v-model="newFolderName" placeholder="请输入你想要的文件名">
+
+      <input type="file" >
+      <button @click="toUpLoadFile()"> 上传</button>
+
+
     <table>
       <tr v-for="yunFile in yunFiles">
         <td v-if="yunFile.isDir===0">是文件</td>
@@ -21,6 +26,8 @@
         <td v-text="yunFile.id"></td>
         <td v-text="yunFile.file_name"></td>
         <td v-text="yunFile.file_path"></td>
+        <td v-text="yunFile.file_type"></td>
+        <button @click="toChangeFileName(yunFile.id,yunFile.file_type,'卧槽尼玛的')">重命名为卧槽尼玛的</button>
         <td><button @click="toThrowInBin(yunFile.id)">扔进回收站</button></td>
 <!--        <button @click="toDownLoadFile(yunFile.id)">下载</button>-->
       </tr>
@@ -39,7 +46,9 @@ export default {
       presentPath:"I:/myYunStoragePath/ft/",//进来一定默认是这个咯
       parentPath:[],//父路径数组，刚进来的时候默认为0
       // file:null,
-      newFolderName:""
+      newFolderName:"",
+      newFileName:"",
+      uploadFile:null,
     }
   },
   computed:{
@@ -128,7 +137,38 @@ export default {
         //this.getFiles()//仍然是顺序问题，所以我还是要嵌套着写。
         that.yunFiles=res.data
       })
-
+    },
+    /*在修改名字的时候执行*/
+    toChangeFileName(id,fileType,newFileName){
+      const that=this
+      axios.get('http://localhost:8082/toChangeFileName', {
+        params: {
+          id:id,
+          newFileName:newFileName,
+          fileType:fileType,
+          presentPath:this.presentPath,
+        }
+      }).then(function (res){
+        //this.getFiles()//仍然是顺序问题，所以我还是要嵌套着写。
+        that.yunFiles=res.data
+      })
+    },
+    /*在上传文件的时候执行*/
+    toUpLoadFile(){
+      const that=this
+      let formData = new FormData() // 声明一个FormData对象
+      formData = new window.FormData() // vue 中使用 window.FormData(),否则会报 'FormData isn't defind
+      formData.append('uploadFile', document.querySelector('input[type=file]').files[0])
+      formData.append('presentPath', this.presentPath)
+      const options = {  // 设置axios的参数
+        url: 'http://localhost:8082/toUploadFile',
+        data: formData,
+        method: 'post',
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }
+      axios(options).then((res) => {that.yunFiles=res.data}) // 发送请求
     }
   },
   created(){
