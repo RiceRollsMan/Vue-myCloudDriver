@@ -17,18 +17,19 @@
       <tr v-for="yunFile in yunFiles">
         <td v-if="yunFile.isDir===0">是文件</td>
         <td v-if="yunFile.isDir===1">是文件夹</td>
-        <td v-if="yunFile.isDir===0">
-          <button @click="">下载</button>
-        </td>
-        <td v-if="yunFile.isDir===1">
-          <button @click="enterFolder(yunFile.id)">进入</button>
-        </td>
+          <td v-if="yunFile.isDir===0">
+            <button @click="toDownLoadFile(yunFile.id)">下载</button>
+          </td>
+          <td v-if="yunFile.isDir===1">
+            <button @click="enterFolder(yunFile.id)">进入</button>
+          </td>
         <td v-text="yunFile.id"></td>
         <td v-text="yunFile.file_name"></td>
         <td v-text="yunFile.file_path"></td>
         <td v-text="yunFile.file_type"></td>
         <button @click="toChangeFileName(yunFile.id,yunFile.file_type,'卧槽尼玛的')">重命名为卧槽尼玛的</button>
-        <td><button @click="toThrowInBin(yunFile.id)">扔进回收站</button></td>
+        <td v-if="yunFile.state==1"><button  @click="toThrowInBin(yunFile.id)">扔进回收站</button></td>
+        <td v-if="yunFile.state==0"><button  @click="toRestoreFile(yunFile.id)">恢复</button></td>
 <!--        <button @click="toDownLoadFile(yunFile.id)">下载</button>-->
       </tr>
     </table>
@@ -138,6 +139,19 @@ export default {
         that.yunFiles=res.data
       })
     },
+    /*在恢复时使用*/
+    toRestoreFile(id){
+      const that=this
+      axios.get('http://localhost:8082/toRestoreFile', {
+        params: {
+          id:id,
+          presentPath:this.presentPath
+        }
+      }).then(function (res){
+        //this.getFiles()//仍然是顺序问题，所以我还是要嵌套着写。
+        that.yunFiles=res.data
+      })
+  },
     /*在修改名字的时候执行*/
     toChangeFileName(id,fileType,newFileName){
       const that=this

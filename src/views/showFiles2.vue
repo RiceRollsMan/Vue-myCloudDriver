@@ -10,7 +10,7 @@
         <td v-if="yunFile.isDir===0">是文件</td>
         <td v-if="yunFile.isDir===1">是文件夹</td>
         <td v-if="yunFile.isDir===0">
-          <button @click="">下载</button>
+          <button @click="toDownLoadFile(yunFile.id)">下载</button>
         </td>
         <td v-if="yunFile.isDir===1">
           <button @click="enterFolder(yunFile.id)">进入</button>
