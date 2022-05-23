@@ -14,4 +14,5 @@ module.exports={
         proxy:proxyObj,
         open:true
     }
-}
+}// webpack.config.js
+

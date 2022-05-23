@@ -27,7 +27,9 @@
         <td v-text="yunFile.file_name"></td>
         <td v-text="yunFile.file_path"></td>
         <td v-text="yunFile.file_type"></td>
+
         <button @click="toChangeFileName(yunFile.id,yunFile.file_type,'卧槽尼玛的')">重命名为卧槽尼玛的</button>
+
         <td v-if="yunFile.state==1"><button  @click="toThrowInBin(yunFile.id)">扔进回收站</button></td>
         <td v-if="yunFile.state==0"><button  @click="toRestoreFile(yunFile.id)">恢复</button></td>
 <!--        <button @click="toDownLoadFile(yunFile.id)">下载</button>-->
@@ -43,10 +45,10 @@ export default {
   name: "showFiles3",
   data(){
     return {
+      presentPath:"I:/myYunStoragePath/tt/",
       yunFiles:[],
-      presentPath:"I:/myYunStoragePath/ft/",//进来一定默认是这个咯
       parentPath:[],//父路径数组，刚进来的时候默认为0
-      // file:null,
+      username:"tt",
       newFolderName:"",
       newFileName:"",
       uploadFile:null,

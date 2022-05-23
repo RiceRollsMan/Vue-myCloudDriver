@@ -4,6 +4,7 @@
   <button @click="goShowFiles()">goShowFiles</button>
   <button @click="goShowFiles2()">goShowFiles2</button>
   <button @click="goShowFiles3()">goShowFiles3</button>
+  <button @click="goShowFiles4()">goShowFiles4</button>
   <button @click="goUpLoadFile()">goUpLoadFile</button>
   <button @click="goBin()">goBin</button>
   <div style="margin:5px; float:left">
@@ -37,9 +38,13 @@ export default {
     goShowFiles3(){
       this.$router.push("/showFiles3")
     },
+    goShowFiles4(){
+      this.$router.push("/showFiles4")
+    },
     goUpLoadFile(){
       this.$router.push("/upLoadFile")
     },
+
     goBin(){
       this.$router.push("/Bin")
     },
